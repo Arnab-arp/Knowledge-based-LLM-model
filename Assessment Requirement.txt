@@ -1,0 +1,58 @@
+Test Assignment: Autonomous AI Insight Engine Builder
+Role Focus: AI Engineer – Builder of Autonomous Intelligence Engines
+ Estimated Time to Complete: 2.5–3 hours
+ Objective: Build a functional micro-agent that mimics core behaviors of our LLM-powered intelligence engine. It should ingest a user query, retrieve context from a knowledge base, and generate a structured, source-cited, hallucination-free response.
+
+🧠 What You Are Building
+A mini autonomous LLM agent (API-based) that:
+Accepts a user research query (e.g., "What are the top 3 use cases for GraphQL in enterprise SaaS?")Retrieves contextual 
+data from a mini knowledge baseResponds with a structured, citation-backed summary⚙ Functional Requirements
+
+1. API Endpoint (FastAPI)
+POST /queryInput: JSON with a user query stringOutput: JSON with:answer (structured response)sources (list of retrieved 
+document titles/IDs)
+
+2. Context Retrieval
+Use a local embedding-based retrieval system (e.g., FAISS, Chroma)Load at least 10 short research documents (provided by 
+you or mocked)Embed and store them using sentence-transformers (e.g., all-MiniLM-L6-v2)Retrieve top 3 documents based on 
+semantic similarity to the query
+
+3. LLM Answer Generation
+Use OpenAI or any open-source LLM to:Ground the answer on the retrieved documentsReturn a concise, structured summary 
+with bullet points and citations (e.g., [Source: doc_03])
+
+4. Hallucination Mitigation
+Ensure the model is instructed to only answer based on retrieved contextYou may prompt it like: "Only use the following context to answer. Do not make up facts."
+
+🔐 Bonus (Optional, Not Required)
+Add Redis caching so identical queries return instantlyAdd streaming (token-by-token) output support to the APILog prompt, 
+answer, and sources to a local SQLite or PostgreSQL DB 
+
+📄What to Submit
+A GitHub link or zipped project folder containing:
+
+-- main.py: FastAPI 
+-- appretriever.py: Vector store + retrieval logic 
+-- llm_agent.py: LLM prompt + response handling
+-- data/: Folder with sample documents 
+-- README.md: How to run (locally or via Docker)
+-- Bonus: Include an example query + response sample (JSON)⏱ Time Limit
+
+This task is scoped to be completed in 2.5 to 3 hours.
+📊 Evaluation Criteria
+Criteria
+Weight
+API & Code Structure
+25%
+Prompting & Hallucination Control
+25%
+Retrieval Accuracy
+20%
+Output Format & Citations
+15%
+Bonus Features (Caching, Logs)
+15%
+🚀 Purpose
+This challenge mirrors what we build daily at Perceive Now: structured, grounded, decision-ready intelligence from chaotic data — powered by autonomous agents.
+We’re not evaluating perfection. We’re evaluating thinking.
+Good luck — and have fun wiring cognition into code.

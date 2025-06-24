@@ -1,0 +1,20 @@
+Why should GraphQL APIs restrict query depth?
+Clients can nest deeply, causing exponential resolver execution and potential DoS. Libraries like graphql-depth-limit allow defining a maximum depth; enforce list field limits to avoid huge response volumes.
+
+How does cost analysis protect GraphQL APIs?
+Cost analysis inspects the query AST to assign a numeric weight per field and total cost. If the query budget is exceeded, the server rejects it upfront. Tools like graphql-armor and graphql-query-complexity help implement this. GitHub uses this approach effectively.
+
+What naming conventions should be used for GraphQL operations?
+Use concise and descriptive names. Start with a verb followed by the action (e.g. addUser) or vice versa (userAdd), enabling clarity in mutations. Named operations enhance readability, debuggability, and tooling support (e.g., Apollo Studio) 
+
+How can GraphQL security be strengthened?
+* Require authentication and authorization at the resolver-level
+* Disable introspection in production
+* Mask errors to avoid leaking schema internals
+* Mitigate batching attacks by limiting aliases or object count per request
+
+How can mutation and query inputs be validated and sanitized?
+Leverage strict schema types (scalars/enums) and validators. Use middleware or directives (e.g., graphql-constraint-directive) and sanitize inputs to prevent SQL/NoSQL injection attacks.
+
+What about batching requests and alias-based enumeration?
+Batch queries can lead to enumeration DoS attacks. Prevent by limiting allowed aliases per endpoint, disabling batching for sensitive objects, or enforcing per-request object caps.	

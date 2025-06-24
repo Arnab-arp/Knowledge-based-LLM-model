@@ -1,0 +1,7 @@
+What are best practices for setting up GraphQL APIs?
+GraphQL APIs can be built in many different languages. Some common ones we see used are JavaScript, Ruby, Python, and TypeScript. Regardless of the language and libraries used for the GraphQL API, be sure to keep the following in mind when setting up the API and its schema.
+
+* Use short names for operations. You could start with the verb and follow it with the action: addUser. Or, you could reverse the order to make it easier to scan: userAdd. In any case, keeping names short and descriptive makes it easier for the devs who are building mutations.
+* Use depth and amount limiting for queries. One of the strengths of GraphQL (nested queries) can easily be used against it if too much data is requested, either in terms of the data depth or the amount of records requested. See a good article on preventing these and related issues from overwhelming your API.
+* Use cost analysis for queries. Related to depth and amount limiting, in that cost analysis helps you stop unwanted queries before they execute. Here's a good overview of cost analysis for GraphQL.
+* Stick with HTTP and JSON. While the GraphQL specification explicitly does not specify the transfer protocol or the transport language, HTTP and JSON are the de facto standards for implementing a GraphQL API. Instructions, examples, and everything else you need to set up your own GraphQL API are generally based on HTTP and JSON.

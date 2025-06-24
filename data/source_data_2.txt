@@ -1,0 +1,27 @@
+How Does GraphQL Work?
+GraphQL is a development architecture style for building APIs using HTTP. Somewhat similar to REST and SOAP, GraphQL uses HTTP POST to send queries through the body of an HTTP request or its query parameters.
+Query language:
+The “QL” in GraphQL stands for “query language” – GraphQL provides a reliable query layer for the API, and an endpoint that developers can use to make requests. This query language allows developers to query the underlying dataset, and provides control over the structure of the GraphQL API response.
+GraphQL provides broad access to many schema objects and properties, enabling a more powerful, flexible way to present digital resources through web APIs.
+API endpoint:
+Instead of designing a separate API route for every underlying resource, GraphQL provides one URL from which you can query the required data like an API client would. Like Structured Query Language (SQL), GraphQL provides a formal language for constructing data requests, while defining the structure of the returned data.
+As with any other web API style or protocol, you can make requests to the GraphQL API through the API’s endpoint URL:
+http://example.com/graphql
+Submit queries using GET or POST:
+When you use GraphQL, you can send queries using HTTP POST or HTTP GET. When sending a query using HTTP POST, the method body looks like this:
+{
+ __type(name: “Address”) {
+  name
+ }
+}
+
+Here is another query intended to search the data and define its structure. It instructs the API to return the names of all the entries called “Address”:
+{
+"data": {
+ "__type": {
+  "name": "Address"
+  }
+ }
+}
+Standardized API protocol:
+GraphQL provides  API providers a standardized method for deploying APIs on top of databases, giving API consumers powerful query capabilities using a common web infrastructure. GraphQL uses the minimal possible capabilities from the HTTP protocol, and invests heavily in standardizing message formats instead of leveraging what already exists in HTTP. GraphQL makes it possible to access content and data across heterogeneous systems, providing developers with many familiar database features on the backend, and making mobile, web, single-page applications faster to develop.

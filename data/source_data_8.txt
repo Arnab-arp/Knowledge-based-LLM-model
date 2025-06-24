@@ -1,0 +1,7 @@
+When to use GraphQL?
+The runtime can handle so many parts that I would otherwise have to deal with manually like types and validation of schemas, being able to easily fetch from the client and generate types with codegen is a much better experience IMO than OpenAPI, and the dev experience with GQLGen is really good. If you want to work with an ORM I can recommend checking out Ent which has a GQLGen integration and can automatically build Relay connection types and handle other use-cases for you. 
+Here are the main reasons:
+* excellent data modeling
+* get required data in single api call
+* great tooling(super easy to generate client sdk)
+* self documentations

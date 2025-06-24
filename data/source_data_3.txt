@@ -1,0 +1,2 @@
+Whats is SaaS? 
+SaaS is a cloud-based software delivery model where individuals or organizations subscribe to applications rather than purchasing and installing them locally. Customers access software over the internet, typically through a web browser, while the cloud service provider manages the underlying infrastructure, security, maintenance, and updates. 
