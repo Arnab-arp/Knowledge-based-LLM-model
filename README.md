@@ -92,3 +92,47 @@ Use **Postman** or any API client:
 5. **Response:** You will receive a structured, source-cited JSON response in the response area.
 
 ---
+
+#**Demo**
+1. ![image](https://github.com/user-attachments/assets/4d72eb84-5894-402b-b414-7914379c39f0)
+   **Input**
+```bash
+   {
+       "query": "Explain what is GraphQL and why it is important?"
+   }
+```
+   **Output**
+```bash
+   {
+       "agent": "* GraphQL is a query language and server-side runtime for APIs that provides clients with precisely the data they request, offering an alternative to REST.  It allows fetching data from multiple sources with a single API call, making APIs faster, more flexible, and developer-friendly.  [source_data_0.txt]\n\n* GraphQL's importance stems from its efficiency in retrieving only the necessary data, preventing under-fetching or over-fetching.  It simplifies the process of retrieving data for related objects simultaneously, reducing the number of API calls.  This makes it a highly efficient API type for queries. [source_data_6.txt]\n\n*  GraphQL's query language allows developers to control the structure of the API response and provides broad access to schema objects and properties, offering a flexible way to present digital resources. [source_data_2.txt]\n\n*  GraphQL offers excellent data modeling, allows retrieval of required data in a single API call, provides great tooling (easy client SDK generation), and features self-documentation. [source_data_8.txt]\n",
+       "sources": [
+           "source_data_0.txt",
+           "source_data_2.txt",
+           "source_data_6.txt",
+           "source_data_9.txt",
+           "source_data_8.txt"
+       ]
+   }
+```
+
+2. ![image](https://github.com/user-attachments/assets/e5ed65c1-8136-4747-8da3-cf3145cdf22d)
+   **Input**
+```bash
+{
+    "query": "Who is Walter White?"
+}
+```
+
+   **Output**
+```bash
+{
+    "agent": "I don't know.\n",
+    "sources": [
+        "source_data_7.txt",
+        "source_data_2.txt",
+        "source_data_8.txt",
+        "source_data_9.txt",
+        "source_data_5.txt"
+    ]
+}
+```
